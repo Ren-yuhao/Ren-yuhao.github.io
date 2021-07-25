@@ -483,37 +483,127 @@
 <p>理解离散时间系统的频率响应</p>
 <h2 id="实验内容"><a href="#实验内容" class="headerlink" title="[实验内容]"></a><strong>[实验内容]</strong></h2><p>一、用$MATLAB$语言描述下列系统，并求出其$tf,zpk$<br>$$<br>（1）\space r^{‘}(t)=10e^{‘}(t)+10e(t)\<br> （2） \space \frac{d^{2}r(t)}{dt^{2}}-5\frac{dr(t)}{dt}=10e(t)<br>$$<br>二、已知系统的系统函数，用$MATLAB$描述下列系统$tf,zpk$<br>$$<br>H(s)=\frac{s}{(s+1)(s+4)}<br>$$<br>三、已知$H(s)$，请分别画出直角坐标系下的频率特性曲线和波特图$(plot、loglog/semilogx、bode)$<br>$$<br>H(s)=\frac{3(s-1)(s-2)}{(s+1)(s+2)}<br>$$</p>
 <h2 id="实验源码-amp-仿真截图"><a href="#实验源码-amp-仿真截图" class="headerlink" title="[实验源码&amp;仿真截图]"></a><strong>[实验源码&amp;仿真截图]</strong></h2><p>一、由（1）（2）方程可得对应系统函数：$H(s)_1=\frac{10s+10}{s} \H(s)_2=\frac{10}{s^{2}-5s}=\frac{10}{s(s-5)}$</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%实验5-1-tf</span></span><br><span class="line">Ns=[<span class="number">10</span>,<span class="number">10</span>];</span><br><span class="line">Ds=[<span class="number">1</span>,<span class="number">0</span>];</span><br><span class="line">sys1=tf(Ns,Ds)</span><br><span class="line"></span><br><span class="line"><span class="comment">%返回结果</span></span><br><span class="line">Transfer <span class="function"><span class="keyword">function</span>:</span></span><br><span class="line">sys1 =</span><br><span class="line"> </span><br><span class="line">  <span class="number">10</span> s + <span class="number">10</span></span><br><span class="line">  ---------</span><br><span class="line">      s</span><br></pre></td></tr></table></figure>
+<pre><code class="matlab">%实验5-1-tf
+Ns=[10,10];
+Ds=[1,0];
+sys1=tf(Ns,Ds)
 
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%实验5-1-1-zpk</span></span><br><span class="line">z=[<span class="number">-1</span>];</span><br><span class="line">p=[<span class="number">0</span>];</span><br><span class="line">k=<span class="number">10</span>;</span><br><span class="line">sys1=zpk(z,p,k)</span><br><span class="line"></span><br><span class="line"><span class="comment">%返回结果</span></span><br><span class="line">Zero/pole/gain:</span><br><span class="line">sys1 =</span><br><span class="line"> </span><br><span class="line">  <span class="number">10</span> (s+<span class="number">1</span>)</span><br><span class="line">  --------</span><br><span class="line">     s</span><br></pre></td></tr></table></figure>
+%返回结果
+Transfer function:
+sys1 =
+ 
+  10 s + 10
+  ---------
+      s
+</code></pre>
+<pre><code class="matlab">%实验5-1-1-zpk
+z=[-1];
+p=[0];
+k=10;
+sys1=zpk(z,p,k)
 
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%实验5-1-2-tf</span></span><br><span class="line">Ns=[<span class="number">10</span>];</span><br><span class="line">Ds=[<span class="number">1</span>,<span class="number">-5</span>,<span class="number">0</span>];</span><br><span class="line">sys2=tf(Ns,Ds)</span><br><span class="line"></span><br><span class="line"><span class="comment">%返回结果</span></span><br><span class="line">Transfer <span class="function"><span class="keyword">function</span>:</span></span><br><span class="line">sys2 =</span><br><span class="line"> </span><br><span class="line">     <span class="number">10</span></span><br><span class="line">  ---------</span><br><span class="line">  s^<span class="number">2</span> - <span class="number">5</span> s</span><br></pre></td></tr></table></figure>
+%返回结果
+Zero/pole/gain:
+sys1 =
+ 
+  10 (s+1)
+  --------
+     s
+</code></pre>
+<pre><code class="matlab">%实验5-1-2-tf
+Ns=[10];
+Ds=[1,-5,0];
+sys2=tf(Ns,Ds)
 
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%实验5-1-2-zpk</span></span><br><span class="line">z=[];</span><br><span class="line">p=[<span class="number">0</span>,<span class="number">5</span>];</span><br><span class="line">sys2=zpk(z,p,k)</span><br><span class="line"></span><br><span class="line"><span class="comment">%返回结果</span></span><br><span class="line">Zero/pole/gain:</span><br><span class="line">sys2 =</span><br><span class="line"> </span><br><span class="line">    <span class="number">10</span></span><br><span class="line">  -------</span><br><span class="line">  s (s<span class="number">-5</span>)</span><br></pre></td></tr></table></figure>
+%返回结果
+Transfer function:
+sys2 =
+ 
+     10
+  ---------
+  s^2 - 5 s
+</code></pre>
+<pre><code class="matlab">%实验5-1-2-zpk
+z=[];
+p=[0,5];
+sys2=zpk(z,p,k)
 
+%返回结果
+Zero/pole/gain:
+sys2 =
+ 
+    10
+  -------
+  s (s-5)
+</code></pre>
 <p>二、由题可得$H(s)=\frac{s}{(s+1)(s+4)}=\frac{s}{s^{2}+5s+4}$</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%实验5-2-tf</span></span><br><span class="line">Ns=[<span class="number">1</span>,<span class="number">0</span>];</span><br><span class="line">Ds=[<span class="number">1</span>,<span class="number">5</span>,<span class="number">4</span>];</span><br><span class="line">sys=tf(Ns,Ds)</span><br><span class="line"></span><br><span class="line"><span class="comment">%返回结果</span></span><br><span class="line">Transfer <span class="function"><span class="keyword">function</span>:</span></span><br><span class="line">sys =</span><br><span class="line"> </span><br><span class="line">        s</span><br><span class="line">  -------------</span><br><span class="line">  s^<span class="number">2</span> + <span class="number">5</span> s + <span class="number">4</span></span><br></pre></td></tr></table></figure>
+<pre><code class="MATLAB">%实验5-2-tf
+Ns=[1,0];
+Ds=[1,5,4];
+sys=tf(Ns,Ds)
 
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%实验5-2-zpk</span></span><br><span class="line">z=[<span class="number">0</span>];</span><br><span class="line">p=[<span class="number">-1</span>,<span class="number">-4</span>];</span><br><span class="line">k=<span class="number">1</span>;</span><br><span class="line">sys=zpk(z,p,k)</span><br><span class="line"></span><br><span class="line"><span class="comment">%返回结果</span></span><br><span class="line">Zero/pole/gain:</span><br><span class="line">sys =</span><br><span class="line"> </span><br><span class="line">       s</span><br><span class="line">  -----------</span><br><span class="line">  (s+<span class="number">1</span>) (s+<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+%返回结果
+Transfer function:
+sys =
+ 
+        s
+  -------------
+  s^2 + 5 s + 4
+</code></pre>
+<pre><code class="matlab">%实验5-2-zpk
+z=[0];
+p=[-1,-4];
+k=1;
+sys=zpk(z,p,k)
 
+%返回结果
+Zero/pole/gain:
+sys =
+ 
+       s
+  -----------
+  (s+1) (s+4)
+</code></pre>
 <p>六、由题可得$H(s)=\frac{3(s-1)(s-2)}{(s+1)(s+2)}=\frac{3s^{2}-9s+6}{s^{2}+3s+2}$</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%实验5-6-plot</span></span><br><span class="line">clear;</span><br><span class="line"><span class="keyword">for</span> n=<span class="number">1</span>:<span class="number">400</span></span><br><span class="line">    w(n)=(n<span class="number">-1</span>)*<span class="number">0.05</span>;</span><br><span class="line">    H(n)=(<span class="number">3</span>*(<span class="number">1</span><span class="built_in">j</span>*w(n)<span class="number">-1</span>)*(<span class="number">1</span><span class="built_in">j</span>*w(n)<span class="number">-2</span>))/((<span class="number">1</span><span class="built_in">j</span>*w(n)+<span class="number">1</span>)*(<span class="number">1</span><span class="built_in">j</span>*w(n)+<span class="number">2</span>));</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">mag=<span class="built_in">abs</span>(H);</span><br><span class="line">phase=<span class="built_in">angle</span>(H);</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line"><span class="built_in">plot</span>(w,mag);title(<span class="string">&#x27;幅频特性&#x27;</span>);grid</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line"><span class="built_in">plot</span>(w,phase);title(<span class="string">&#x27;相频特性&#x27;</span>);grid</span><br></pre></td></tr></table></figure>
-
+<pre><code class="matlab">%实验5-6-plot
+clear;
+for n=1:400
+    w(n)=(n-1)*0.05;
+    H(n)=(3*(1j*w(n)-1)*(1j*w(n)-2))/((1j*w(n)+1)*(1j*w(n)+2));
+end
+mag=abs(H);
+phase=angle(H);
+subplot(2,1,1)
+plot(w,mag);title(&#39;幅频特性&#39;);grid
+subplot(2,1,2)
+plot(w,phase);title(&#39;相频特性&#39;);grid
+</code></pre>
 <p>![image-20210508184617247](C:\Users\Ren Yuhao\AppData\Roaming\Typora\typora-user-images\image-20210508184617247.png)</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%实验5-6-loglog/semilogx</span></span><br><span class="line">clear;</span><br><span class="line"><span class="keyword">for</span> n=<span class="number">1</span>:<span class="number">400</span></span><br><span class="line">    w(n)=(n<span class="number">-1</span>)*<span class="number">0.05</span>;</span><br><span class="line">    H(n)=(<span class="number">3</span>*(<span class="number">1</span><span class="built_in">j</span>*w(n)<span class="number">-1</span>)*(<span class="number">1</span><span class="built_in">j</span>*w(n)<span class="number">-2</span>))/((<span class="number">1</span><span class="built_in">j</span>*w(n)+<span class="number">1</span>)*(<span class="number">1</span><span class="built_in">j</span>*w(n)+<span class="number">2</span>));</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">mag=<span class="built_in">abs</span>(H);</span><br><span class="line">phase=<span class="built_in">angle</span>(H);</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">loglog(w,mag);title(<span class="string">&#x27;幅频特性&#x27;</span>);grid</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">semilogx(w,phase);title(<span class="string">&#x27;相频特性&#x27;</span>);grid</span><br></pre></td></tr></table></figure>
-
+<pre><code class="matlab">%实验5-6-loglog/semilogx
+clear;
+for n=1:400
+    w(n)=(n-1)*0.05;
+    H(n)=(3*(1j*w(n)-1)*(1j*w(n)-2))/((1j*w(n)+1)*(1j*w(n)+2));
+end
+mag=abs(H);
+phase=angle(H);
+subplot(2,1,1)
+loglog(w,mag);title(&#39;幅频特性&#39;);grid
+subplot(2,1,2)
+semilogx(w,phase);title(&#39;相频特性&#39;);grid
+</code></pre>
 <p>![image-20210508184447467](C:\Users\Ren Yuhao\AppData\Roaming\Typora\typora-user-images\image-20210508184447467.png)</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%5-6-bodea=[1,3,2];b=[3,-9,6];sys=tf(b,a);bode(sys);grid</span></span><br></pre></td></tr></table></figure>
-
+<pre><code class="matlab">%5-6-bodea=[1,3,2];b=[3,-9,6];sys=tf(b,a);bode(sys);grid
+</code></pre>
 <p>![image-20210508184538773](C:\Users\Ren Yuhao\AppData\Roaming\Typora\typora-user-images\image-20210508184538773.png)</p>
 <h2 id="实验心得及总结"><a href="#实验心得及总结" class="headerlink" title="[实验心得及总结]"></a>[实验心得及总结]</h2><p>对系统分析需进行数学模型的建立，描述系统的方法如：微分方程、系统函数、极零点、频率响应函数等。</p>
 <p><strong>系统函数方式格式：</strong></p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sys=tf(num,den);</span><br></pre></td></tr></table></figure>
-
+<pre><code class="matlab">sys=tf(num,den);
+</code></pre>
 <p><strong>其中：num-分子多项式；den-分母多项式</strong></p>
 <p><strong>极零点方式格式：</strong></p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sys = zpk(z,p,k);</span><br></pre></td></tr></table></figure>
-
+<pre><code class="matlab">sys = zpk(z,p,k);
+</code></pre>
 <p><strong>其中：z-零点，p-极点，k-增益</strong></p>
 <p><strong>$loglog$函数：</strong>横纵坐标均取对数</p>
 <p><strong>$semilogx$函数：</strong>仅横坐标取对数</p>
