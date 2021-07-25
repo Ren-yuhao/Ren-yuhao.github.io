@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="article title, Ren yuaho">
+    <meta name="keywords" content="关于, Ren yuaho">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>article title | Ren yuaho</title>
+    <title>关于 | Ren yuaho</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">article title</h1>
+                    <h1 class="description center-align post-title">about</h1>
                 </div>
             </div>
         </div>
@@ -464,60 +464,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <table>
-<thead>
-<tr>
-<th>姓名：任宇壕</th>
-<th>班级：电子192</th>
-<th>学号：191404110221</th>
-</tr>
-</thead>
-<tbody><tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h1 id="实验五-系统在-MATLAB-中的表示和频率特性"><a href="#实验五-系统在-MATLAB-中的表示和频率特性" class="headerlink" title="[实验五] 系统在$MATLAB$中的表示和频率特性"></a><strong>[实验五] 系统在$MATLAB$中的表示和频率特性</strong></h1><h2 id="实验目的"><a href="#实验目的" class="headerlink" title="[实验目的]"></a><strong>[实验目的]</strong></h2><p>熟悉系统在$MATLAB$中的表示</p>
-<p>掌握系统频率响应曲线绘制的方法</p>
-<p>理解离散时间系统的频率响应</p>
-<h2 id="实验内容"><a href="#实验内容" class="headerlink" title="[实验内容]"></a><strong>[实验内容]</strong></h2><p>一、用$MATLAB$语言描述下列系统，并求出其$tf,zpk$<br>$$<br>（1）\space r^{‘}(t)=10e^{‘}(t)+10e(t)\<br> （2） \space \frac{d^{2}r(t)}{dt^{2}}-5\frac{dr(t)}{dt}=10e(t)<br>$$<br>二、已知系统的系统函数，用$MATLAB$描述下列系统$tf,zpk$<br>$$<br>H(s)=\frac{s}{(s+1)(s+4)}<br>$$<br>三、已知$H(s)$，请分别画出直角坐标系下的频率特性曲线和波特图$(plot、loglog/semilogx、bode)$<br>$$<br>H(s)=\frac{3(s-1)(s-2)}{(s+1)(s+2)}<br>$$</p>
-<h2 id="实验源码-amp-仿真截图"><a href="#实验源码-amp-仿真截图" class="headerlink" title="[实验源码&amp;仿真截图]"></a><strong>[实验源码&amp;仿真截图]</strong></h2><p>一、由（1）（2）方程可得对应系统函数：$H(s)_1=\frac{10s+10}{s} \H(s)_2=\frac{10}{s^{2}-5s}=\frac{10}{s(s-5)}$</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%实验5-1-tf</span></span><br><span class="line">Ns=[<span class="number">10</span>,<span class="number">10</span>];</span><br><span class="line">Ds=[<span class="number">1</span>,<span class="number">0</span>];</span><br><span class="line">sys1=tf(Ns,Ds)</span><br><span class="line"></span><br><span class="line"><span class="comment">%返回结果</span></span><br><span class="line">Transfer <span class="function"><span class="keyword">function</span>:</span></span><br><span class="line">sys1 =</span><br><span class="line"> </span><br><span class="line">  <span class="number">10</span> s + <span class="number">10</span></span><br><span class="line">  ---------</span><br><span class="line">      s</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%实验5-1-1-zpk</span></span><br><span class="line">z=[<span class="number">-1</span>];</span><br><span class="line">p=[<span class="number">0</span>];</span><br><span class="line">k=<span class="number">10</span>;</span><br><span class="line">sys1=zpk(z,p,k)</span><br><span class="line"></span><br><span class="line"><span class="comment">%返回结果</span></span><br><span class="line">Zero/pole/gain:</span><br><span class="line">sys1 =</span><br><span class="line"> </span><br><span class="line">  <span class="number">10</span> (s+<span class="number">1</span>)</span><br><span class="line">  --------</span><br><span class="line">     s</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%实验5-1-2-tf</span></span><br><span class="line">Ns=[<span class="number">10</span>];</span><br><span class="line">Ds=[<span class="number">1</span>,<span class="number">-5</span>,<span class="number">0</span>];</span><br><span class="line">sys2=tf(Ns,Ds)</span><br><span class="line"></span><br><span class="line"><span class="comment">%返回结果</span></span><br><span class="line">Transfer <span class="function"><span class="keyword">function</span>:</span></span><br><span class="line">sys2 =</span><br><span class="line"> </span><br><span class="line">     <span class="number">10</span></span><br><span class="line">  ---------</span><br><span class="line">  s^<span class="number">2</span> - <span class="number">5</span> s</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%实验5-1-2-zpk</span></span><br><span class="line">z=[];</span><br><span class="line">p=[<span class="number">0</span>,<span class="number">5</span>];</span><br><span class="line">sys2=zpk(z,p,k)</span><br><span class="line"></span><br><span class="line"><span class="comment">%返回结果</span></span><br><span class="line">Zero/pole/gain:</span><br><span class="line">sys2 =</span><br><span class="line"> </span><br><span class="line">    <span class="number">10</span></span><br><span class="line">  -------</span><br><span class="line">  s (s<span class="number">-5</span>)</span><br></pre></td></tr></table></figure>
-
-<p>二、由题可得$H(s)=\frac{s}{(s+1)(s+4)}=\frac{s}{s^{2}+5s+4}$</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%实验5-2-tf</span></span><br><span class="line">Ns=[<span class="number">1</span>,<span class="number">0</span>];</span><br><span class="line">Ds=[<span class="number">1</span>,<span class="number">5</span>,<span class="number">4</span>];</span><br><span class="line">sys=tf(Ns,Ds)</span><br><span class="line"></span><br><span class="line"><span class="comment">%返回结果</span></span><br><span class="line">Transfer <span class="function"><span class="keyword">function</span>:</span></span><br><span class="line">sys =</span><br><span class="line"> </span><br><span class="line">        s</span><br><span class="line">  -------------</span><br><span class="line">  s^<span class="number">2</span> + <span class="number">5</span> s + <span class="number">4</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%实验5-2-zpk</span></span><br><span class="line">z=[<span class="number">0</span>];</span><br><span class="line">p=[<span class="number">-1</span>,<span class="number">-4</span>];</span><br><span class="line">k=<span class="number">1</span>;</span><br><span class="line">sys=zpk(z,p,k)</span><br><span class="line"></span><br><span class="line"><span class="comment">%返回结果</span></span><br><span class="line">Zero/pole/gain:</span><br><span class="line">sys =</span><br><span class="line"> </span><br><span class="line">       s</span><br><span class="line">  -----------</span><br><span class="line">  (s+<span class="number">1</span>) (s+<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
-
-<p>六、由题可得$H(s)=\frac{3(s-1)(s-2)}{(s+1)(s+2)}=\frac{3s^{2}-9s+6}{s^{2}+3s+2}$</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%实验5-6-plot</span></span><br><span class="line">clear;</span><br><span class="line"><span class="keyword">for</span> n=<span class="number">1</span>:<span class="number">400</span></span><br><span class="line">    w(n)=(n<span class="number">-1</span>)*<span class="number">0.05</span>;</span><br><span class="line">    H(n)=(<span class="number">3</span>*(<span class="number">1</span><span class="built_in">j</span>*w(n)<span class="number">-1</span>)*(<span class="number">1</span><span class="built_in">j</span>*w(n)<span class="number">-2</span>))/((<span class="number">1</span><span class="built_in">j</span>*w(n)+<span class="number">1</span>)*(<span class="number">1</span><span class="built_in">j</span>*w(n)+<span class="number">2</span>));</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">mag=<span class="built_in">abs</span>(H);</span><br><span class="line">phase=<span class="built_in">angle</span>(H);</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line"><span class="built_in">plot</span>(w,mag);title(<span class="string">&#x27;幅频特性&#x27;</span>);grid</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line"><span class="built_in">plot</span>(w,phase);title(<span class="string">&#x27;相频特性&#x27;</span>);grid</span><br></pre></td></tr></table></figure>
-
-<p>![image-20210508184617247](C:\Users\Ren Yuhao\AppData\Roaming\Typora\typora-user-images\image-20210508184617247.png)</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%实验5-6-loglog/semilogx</span></span><br><span class="line">clear;</span><br><span class="line"><span class="keyword">for</span> n=<span class="number">1</span>:<span class="number">400</span></span><br><span class="line">    w(n)=(n<span class="number">-1</span>)*<span class="number">0.05</span>;</span><br><span class="line">    H(n)=(<span class="number">3</span>*(<span class="number">1</span><span class="built_in">j</span>*w(n)<span class="number">-1</span>)*(<span class="number">1</span><span class="built_in">j</span>*w(n)<span class="number">-2</span>))/((<span class="number">1</span><span class="built_in">j</span>*w(n)+<span class="number">1</span>)*(<span class="number">1</span><span class="built_in">j</span>*w(n)+<span class="number">2</span>));</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">mag=<span class="built_in">abs</span>(H);</span><br><span class="line">phase=<span class="built_in">angle</span>(H);</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">loglog(w,mag);title(<span class="string">&#x27;幅频特性&#x27;</span>);grid</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">semilogx(w,phase);title(<span class="string">&#x27;相频特性&#x27;</span>);grid</span><br></pre></td></tr></table></figure>
-
-<p>![image-20210508184447467](C:\Users\Ren Yuhao\AppData\Roaming\Typora\typora-user-images\image-20210508184447467.png)</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%5-6-bodea=[1,3,2];b=[3,-9,6];sys=tf(b,a);bode(sys);grid</span></span><br></pre></td></tr></table></figure>
-
-<p>![image-20210508184538773](C:\Users\Ren Yuhao\AppData\Roaming\Typora\typora-user-images\image-20210508184538773.png)</p>
-<h2 id="实验心得及总结"><a href="#实验心得及总结" class="headerlink" title="[实验心得及总结]"></a>[实验心得及总结]</h2><p>对系统分析需进行数学模型的建立，描述系统的方法如：微分方程、系统函数、极零点、频率响应函数等。</p>
-<p><strong>系统函数方式格式：</strong></p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sys=tf(num,den);</span><br></pre></td></tr></table></figure>
-
-<p><strong>其中：num-分子多项式；den-分母多项式</strong></p>
-<p><strong>极零点方式格式：</strong></p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sys = zpk(z,p,k);</span><br></pre></td></tr></table></figure>
-
-<p><strong>其中：z-零点，p-极点，k-增益</strong></p>
-<p><strong>$loglog$函数：</strong>横纵坐标均取对数</p>
-<p><strong>$semilogx$函数：</strong>仅横坐标取对数</p>
-
+                
                 
             </div>
             <hr/>
@@ -543,7 +490,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ren-yuhao.github.io/2021/07/25/article-title/">http://ren-yuhao.github.io/2021/07/25/article-title/</a>
+                    <a href="http://ren-yuhao.github.io/about/index.html">http://ren-yuhao.github.io/about/index.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -753,13 +700,13 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2021/07/25/article-title/">
+                <a href="/about/index.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="article title">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="about">
                         
-                        <span class="card-title">article title</span>
+                        <span class="card-title">about</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -788,16 +735,16 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2021/07/25/hello-world/">
+                <a href="/about/index.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="about">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">about</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -818,6 +765,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
