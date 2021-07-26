@@ -92,7 +92,7 @@
     <div class="configure-border-2">
       <div class="configure-core"></div>
     </div>
-    <div class="loading-word">加载中...</div>
+    <div class="loading-word">loading...</div>
   </div>
 </div>
 
@@ -150,7 +150,7 @@
                   
                     <i class="fa fa-home" aria-hidden="true"></i>
                   
-                  <span class="name">首页</span>
+                  <span class="name">Home</span>
                 </a>
               
             </li>
@@ -161,7 +161,7 @@
                   
                     <i class="fa fa-archive" aria-hidden="true"></i>
                   
-                  <span class="name">归档</span>
+                  <span class="name">Archives</span>
                 </a>
               
             </li>
@@ -172,7 +172,7 @@
                   
                     <i class="fa fa-tags" aria-hidden="true"></i>
                   
-                  <span class="name">标签</span>
+                  <span class="name">Tags</span>
                 </a>
               
             </li>
@@ -183,7 +183,7 @@
                   
                     <i class="fa fa-bookmark" aria-hidden="true"></i>
                   
-                  <span class="name">分类</span>
+                  <span class="name">Categories</span>
                 </a>
               
             </li>
@@ -194,7 +194,7 @@
                   
                     <i class="fa fa-user" aria-hidden="true"></i>
                   
-                  <span class="name">关于</span>
+                  <span class="name">About</span>
                 </a>
               
             </li>
@@ -203,7 +203,7 @@
               
                 <a href="/friends" class="drawer-menu-item-link">
                   
-                  <span class="name">友情链接</span>
+                  <span class="name">Friends</span>
                 </a>
               
             </li>
@@ -282,64 +282,64 @@
           
             <li class="menu-item" style="position: relative;">
               
-                <a href="/" class="menu-item-link" title="首页">
+                <a href="/" class="menu-item-link" title="Home">
                   
                     <i class="fa fa-home" aria-hidden="true"></i>
                   
-                  <span class="name">首页</span>
+                  <span class="name">Home</span>
                 </a>
               
             </li>
           
             <li class="menu-item" style="position: relative;">
               
-                <a href="/archives" class="menu-item-link" title="归档">
+                <a href="/archives" class="menu-item-link" title="Archives">
                   
                     <i class="fa fa-archive" aria-hidden="true"></i>
                   
-                  <span class="name">归档</span>
+                  <span class="name">Archives</span>
                 </a>
               
             </li>
           
             <li class="menu-item" style="position: relative;">
               
-                <a href="/tags" class="menu-item-link" title="标签">
+                <a href="/tags" class="menu-item-link" title="Tags">
                   
                     <i class="fa fa-tags" aria-hidden="true"></i>
                   
-                  <span class="name">标签</span>
+                  <span class="name">Tags</span>
                 </a>
               
             </li>
           
             <li class="menu-item" style="position: relative;">
               
-                <a href="/categories" class="menu-item-link" title="分类">
+                <a href="/categories" class="menu-item-link" title="Categories">
                   
                     <i class="fa fa-bookmark" aria-hidden="true"></i>
                   
-                  <span class="name">分类</span>
+                  <span class="name">Categories</span>
                 </a>
               
             </li>
           
             <li class="menu-item" style="position: relative;">
               
-                <a href="/about" class="menu-item-link" title="关于">
+                <a href="/about" class="menu-item-link" title="About">
                   
                     <i class="fa fa-user" aria-hidden="true"></i>
                   
-                  <span class="name">关于</span>
+                  <span class="name">About</span>
                 </a>
               
             </li>
           
             <li class="menu-item" style="position: relative;">
               
-                <a href="/friends" class="menu-item-link" title="友情链接">
+                <a href="/friends" class="menu-item-link" title="Friends">
                   
-                  <span class="name">友情链接</span>
+                  <span class="name">Friends</span>
                 </a>
               
             </li>
@@ -359,13 +359,13 @@
         <h2>
           <span>
             <i class="fa fa-search" aria-hidden="true"></i>
-            <span class="title">本地搜索</span>
+            <span class="title">Search</span>
           </span>
           <i class="fa fa-close close" pointer style="float:right;" aria-hidden="true" @click.self="cancelDialogVisible()"></i>
         </h2>
         <form class="site-search-form">
           <input type="text"
-            placeholder="请输入关键字"
+            placeholder="Please enter keywords"
             id="local-search-input" 
             @click="getSearchFile()"
             class="st-search-input"
@@ -1231,10 +1231,112 @@
         :data="listData"
         :class-option="classOption"
         class="warp"
-        style="height: 0px"
+        style="height: 180px"
       >
         <ul class="index-notice-content__ul">
           
+          
+            <li>
+              
+                <div class="index-notice-content__title">
+                  
+                    <a href="/archives" title="#博客更新到2.0了" style="color:red">
+                      #博客更新到2.0了
+                    </a>
+                  
+                </div>
+                
+                  <div class="index-notice-content__date" style="color:red">
+                    2021-04-28
+                  </div>
+                
+              
+            </li>
+          
+            <li>
+              
+                <div class="index-notice-content__title">
+                  
+                    <a target="_blank" rel="noopener" href="http://baidu.com" title="#新增 轮播图支持三种模式了，功能也增强了 ~" style="color:red">
+                      #新增 轮播图支持三种模式了，功能也增强了 ~
+                    </a>
+                  
+                </div>
+                
+                  <div class="index-notice-content__date" style="color:red">
+                    2021-04-28
+                  </div>
+                
+              
+            </li>
+          
+            <li>
+              
+                <div class="index-notice-content__title">
+                  
+                    <a target="_blank" rel="noopener" href="http://baidu.com" title="#新增 支持二级导航" style="color:blue">
+                      #新增 支持二级导航
+                    </a>
+                  
+                </div>
+                
+                  <div class="index-notice-content__date" style="color:blue">
+                    2021-04-28
+                  </div>
+                
+              
+            </li>
+          
+            <li>
+              
+                <div class="index-notice-content__title">
+                  
+                    <a target="_blank" rel="noopener" href="http://baidu.com" title="#新增 归档，分类等页面头部图片位置可以设置为视频 ~" style="color:#42b983">
+                      #新增 归档，分类等页面头部图片位置可以设置为视频 ~
+                    </a>
+                  
+                </div>
+                
+                  <div class="index-notice-content__date" style="color:#42b983">
+                    2021-04-28
+                  </div>
+                
+              
+            </li>
+          
+            <li>
+              
+                <div class="index-notice-content__title">
+                  
+                    <a target="_blank" rel="noopener" href="http://baidu.com" title="#新增 头部导航可以设置为在顶部透明，并且可以任意设置背景颜色了 ~" style="">
+                      #新增 头部导航可以设置为在顶部透明，并且可以任意设置背景颜色了 ~
+                    </a>
+                  
+                </div>
+                
+                  <div class="index-notice-content__date" style="">
+                    2021-04-28
+                  </div>
+                
+              
+            </li>
+          
+            <li>
+              
+                <div class="index-notice-content__title">
+                  
+                    <a target="_blank" rel="noopener" href="http://baidu.com" title="#新增 首页增加了座右铭和公告栏目 ~" style="">
+                      #新增 首页增加了座右铭和公告栏目 ~
+                    </a>
+                  
+                </div>
+                
+                  <div class="index-notice-content__date" style="">
+                    2021-04-28
+                  </div>
+                
+              
+            </li>
            
         </ul>
       </vue-seamless-scroll>
@@ -1249,7 +1351,7 @@
 <script>
   var seamless = JSON.parse('false');
   seamless = seamless ? 0 : 30;
-  var listData = '' || '';
+  var listData = '[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]' || '';
   listData = listData.split(',');
   var vm = new Vue({
     el: '#appIndexNotice',
@@ -1280,7 +1382,7 @@
 
 
 <div class="topArticle" data-aos="fade-up">
-	<h3><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>推荐文章</h3>
+	<h3><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>Recommend Articles</h3>
 	<div class="articles">
 		
 			
@@ -1481,9 +1583,41 @@
   <div class="footer-main">
     <div class="link">
       
+        
+          <a href="/atom.xml" class="social">
+            
+              <i class="fa fa-rss" aria-hidden="true"></i>
+            
+          </a>
+        
+      
+        
+          <a href="mailto:1178082508@qq.com" class="social">
+            
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+            
+          </a>
+        
+      
+        
+          <a target="_blank" rel="noopener" href="https://github.com/ren-yuhao" class="social">
+            
+              <i class="fa fa-github" aria-hidden="true"></i>
+            
+          </a>
+        
+      
+        
+          <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=1730241541" class="social">
+            
+              <i class="fa fa-qq" aria-hidden="true"></i>
+            
+          </a>
+        
+      
     </div>
     <div class="footer-copyright">
-      <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/yuang01">yuang01</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> </p>
+      <p>Copyright © 2020 - 2021 <a target="_blank" rel="noopener" href="https://github.com/ren-yuhao">Ren-yuhao</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> </p>
 
     </div>
     <div class="footer-custom">
@@ -1494,11 +1628,11 @@
       
   <!-- 不蒜子统计 -->
   <span id="busuanzi_container_site_pv">
-        <i class="fa fa-eye" aria-hidden="true"></i>本站总访问量：<span id="busuanzi_value_site_pv"></span> 次
+        <i class="fa fa-eye" aria-hidden="true"></i>Total visits：<span id="busuanzi_value_site_pv"></span> times
   </span>
   <span class="post-meta-divider">|</span>
   <span id="busuanzi_container_site_uv" style='display:none'>
-        <i class="fa fa-users" aria-hidden="true"></i>本站访客数：<span id="busuanzi_value_site_uv"></span> 人
+        <i class="fa fa-users" aria-hidden="true"></i>Number of visitors：<span id="busuanzi_value_site_uv"></span> people
   </span>
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax></script>
 
@@ -1568,12 +1702,16 @@
 <style>
 .aplayer .aplayer-lrc p {
   
+  display: none;
+  
   font-size: 12px;
   font-weight: 700;
   line-height: 16px !important;
 }
 
 .aplayer .aplayer-lrc p.aplayer-lrc-current {
+  
+  display: none;
   
   font-size: 15px;
   color: #42b983;
@@ -1822,7 +1960,7 @@
       },
       mounted() {
         const that = this;
-        var copy = '复制';
+        var copy = 'copy';
         /* code */
         var initCopyCode = function () {
           var copyHtml = '';
