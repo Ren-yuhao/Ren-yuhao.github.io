@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>友情链接 | Ren yuaho</title>
+  <title>My first to establsih blog | Ren yuaho</title>
 
   
     
@@ -472,7 +472,7 @@
   
   <div class="title-box">
     <span class="title">
-      friends
+      My first to establsih blog
     </span>
   </div>
   
@@ -494,10 +494,23 @@
       
       <div class="post-tags-categories">
         
+        <div class="tags">
+          <i class="iconfont icontag"></i>
+          
+            <a href="/tags/blog/" class="">
+              blog
+            </a>
+          
+        </div>
+        
         
       </div>
       <div class="post-content">
-        
+        <h1 id="个人博客搭建"><a href="#个人博客搭建" class="headerlink" title="个人博客搭建"></a>个人博客搭建</h1><h2 id="感受经历"><a href="#感受经历" class="headerlink" title="感受经历"></a>感受经历</h2><ul>
+<li>有点难</li>
+<li>步骤有点繁琐<br><img "" class="lazyload placeholder" data-original="https://tse1-mm.cn.bing.net/th/id/R-C.99c17a64707822ed071aa73b0f41fd02?rik=XHL2flZ2h8wgEw&riu=http://www.dnzhuti.com/uploads/allimg/170323/95-1F323144449.jpg&ehk=aYX9ubjmsW26aNvEe2oJRJwuS+R8VHXQk0P3gqFgUd8=&risl=&pid=ImgRaw" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br><a target="_blank" rel="noopener" href="https://tse1-mm.cn.bing.net/th/id/R-C.99c17a64707822ed071aa73b0f41fd02?rik=XHL2flZ2h8wgEw&riu=http://www.dnzhuti.com/uploads/allimg/170323/95-1F323144449.jpg&ehk=aYX9ubjmsW26aNvEe2oJRJwuS+R8VHXQk0P3gqFgUd8=&risl=&pid=ImgRaw"></a></li>
+</ul>
+
       </div>
       
         <div class="copyright">
@@ -507,7 +520,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/friends/index.html" target="_blank" title="friends">http://ren-yuhao.github.io/friends/index.html</a>
+    <a href="/2021/07/26/my-first-to-establsih-blog/" target="_blank" title="My first to establsih blog">http://ren-yuhao.github.io/2021/07/26/my-first-to-establsih-blog/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -526,6 +539,36 @@
 
 
 
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img lazyload" data-original="/medias/3.jpg" style="background-size: cover; 
+      background-position: center center;">
+    </div>
+    <a href="/2021/07/25/article-title/" class="post-nav-link">
+      <div class="title">
+        下一篇: <i class="fa fa-angle-right"></i>
+        <div>article title</div>
+      </div>
+      <!-- <div class="content">
+        
+
+
+姓名：任宇壕
+班级：电子192
+学号：191404110221
+
+
+
+
+
+
+
+
+[实验五] 系统在$MATLAB$
+      </div> -->
+    </a>
+  </div>
 
 </div>
 
@@ -1534,11 +1577,108 @@
   <!-- 目录 -->
   <!-- 文章详情页右侧目录 -->
 
+  <div class="toc-aside">
+    <div class="toc-main">
+      <div class="toc-aside-title">
+        <i class="fa fa-list-ul" aria-hidden="true"></i><span>本文目录</span>
+        <div class="toc-open-close">本文目录</div>
+      </div>
+      <div class="toc-content">
+        <link href="/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/js/tocbot/tocbot.min.js"></script>
+<div class="toc"></div>
+
+<script>
+  if ($('.toc').length > 0) {
+    var headerEl = 'h2, h3, h4',  //headers 
+      content = '.post-detail',//文章容器
+      idArr = {};  //标题数组以确定是否增加索引id
+      //add #id
+
+    $(content).children(headerEl).each(function () {
+      //去除空格以及多余标点
+      var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+
+      headerId = headerId.toLowerCase();
+      if (idArr[headerId]) {
+        //id已经存在
+        $(this).attr('id', headerId + '-' + idArr[headerId]);
+        idArr[headerId]++;
+      }
+      else {
+        //id未存在
+        idArr[headerId] = 1;
+        $(this).attr('id', headerId);
+      }
+    });
+
+    tocbot.init({
+      // Where to render the table of contents.
+      tocSelector: '.toc',
+      // Where to grab the headings to build the table of contents.
+      contentSelector: content,
+      // Which headings to grab inside of the contentSelector element.
+      headingSelector: headerEl,
+      scrollSmooth: true,
+      scrollSmoothOffset: -80,
+      headingsOffset: -($(window).height() * 0.4 - 45),
+      positionFixedSelector: '.toc-main',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  }
+
+</script>
+
+<style>
+.is-position-fixed {
+  position:sticky !important;
+  top: 74px;
+}
+.toc-main ul {
+  counter-reset: show-list;
+}
+.toc-main ul li::before {
+  content: counter(item)".";
+  display: block;
+  position: absolute;
+  left: 12px;
+  top:0;
+}
+.toc > .toc-list {
+  padding-left: 35px;
+}
+.toc>.toc-list li {
+  list-style: decimal;
+}
+.toc-list {
+  padding-left: 25px;
+}
+</style>
+      </div>
+    </div>
+  </div>
+
+  
+
   <script>
-    $(".toc-aside").css({'width': 0, 'padding': 0});
-    $(".toc-content").css({'width': 0});
-    $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
-    $(".main-content").css({'width': '75%', 'margin': '10px auto'});
+    let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
+    let open = eval('' || 'true');
+    openOrCloseBtn.click(function() {
+      if (open === true) {
+        $(".toc-aside").css({'width': 0, 'padding': 0});
+        $(".toc-content").css({'width': 0});
+        $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
+        $(".main-content").css({'width': '75%', 'margin': '10px auto'});
+        open = false;
+      } else {
+        $(".toc-aside").css({'width': '300px', 'padding': '0 10px'});
+        $(".toc-content").css({'width': '300px'});
+        $(".toc-aside-title span, .toc-aside-title i").css({'display': 'inline-block'});
+        $(".main-content").css({'width': '65%', 'margin-right': '10px', 'margin-left': 'calc(35% - 350px)'});
+        open = true;
+      }
+    });
   </script>
 
 
