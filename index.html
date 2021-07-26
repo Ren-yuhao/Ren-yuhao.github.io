@@ -33,7 +33,7 @@
     
     <script src="https://cdn.jsdelivr.net/gh/yuang01/live2d-widget@latest/autoload.js"></script>
     <script>
-        var live2dOpen = eval('true') || false;
+        var live2dOpen = eval('false') || false;
         if (!live2dOpen) {
             localStorage.setItem('waifu-display', 1609323474481);
         }
@@ -577,7 +577,7 @@
   <swiper v-cloak ref="mySwiper" :options="swiperOptions" @slideChangeTransitionEnd="slideChangeTransitionEnd">
     
       <swiper-slide>
-        <div class="item swiper-lazy" data-background="https://img11.360buyimg.com/ddimg/jfs/t1/160978/33/20686/2476596/6083e62dEa588862b/63f8f2163ab61b2f.png" style="background-size: 300000px; 
+        <div class="item swiper-lazy" data-background="" style="background-size: 300000px; 
           background-position: left center;" style="position: relative;">
           <div class="swiper-bgmask" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;"></div>
             <div class="flag">
@@ -599,10 +599,10 @@
                 </div>
                 <div style="display: flex;" class="flag-text-btns">
                   
-                    <div class="ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><a target="_blank" rel="noopener" href="https://yuang01.gitee.io/2021/02/08/hexo-theme-bamboo-new/" class="read-more swiper-btn-color" style="display: inline-block; z-index:1;">阅读文档</a></div>
+                    <div class="ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><a target="_blank" rel="noopener" href="https://yuang01.gitee.io/2021/02/08/hexo-theme-bamboo-new/" class="read-more swiper-btn-color" style="display: inline-block; z-index:1;">READ</a></div>
                   
                   
-                    <div class="ani animated" style="margin-left: 10px;" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><a target="_blank" rel="noopener" href="https://gitee.com/yuang01/hexo-theme-bamboo/repository/archive/dev.zip" class="read-more swiper-btn-color2" style="display: inline-block; z-index:1;border: 1px solid white;">下载主题</a></div>
+                    <div class="ani animated" style="margin-left: 10px;" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><a target="_blank" rel="noopener" href="https://gitee.com/yuang01/hexo-theme-bamboo/repository/archive/dev.zip" class="read-more swiper-btn-color2" style="display: inline-block; z-index:1;border: 1px solid white;">CONTACT</a></div>
                   
                 </div>
               </div>
@@ -631,7 +631,7 @@
   var loop = JSON.parse('true') ? false : JSON.parse('true');
   var effect = 'slide';
   var swiperLength = parseInt(document.querySelector(".swiper-length").innerText);
-  var defaultDesc = '';
+  var defaultDesc = '煮酒洗净尘嚣，论知交,万般付之一笑，共偕老';
   defaultDesc = defaultDesc.split(',');
   var defaultDescTypedLoop = JSON.parse('true');
   var vm = new Vue({
@@ -994,6 +994,92 @@
   }
 
 
+
+  .swiper-slide {
+    height: 450px; 
+  }
+  .flag {
+    width: 100%;
+  }
+  .flag-text {
+    left: 10%;
+  }
+  .swiper-button-prev {
+    margin-left: 10%;
+  }
+  .swiper-button-next {
+    margin-right: 10%;
+  }
+  .flag-text-btns {
+    justify-content: center;
+  }
+  .flag-text {
+    margin-left: 0;
+    transform: none;
+  }
+  .flag-text .title {
+    font-size: 2.2rem;
+    line-height: 1.5em;
+    max-height: none;
+  }
+  .bottom-one-btn {
+    margin-top: 15px;
+  }
+  .swiper-button-prev {
+    margin-left: 10px;
+    transform: translateX(0);
+    border-radius: 50%;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+  }
+  .swiper-button-next {
+    margin-right: 10px;
+    transform: translateX(0);
+    border-radius: 50%;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+  }
+  .swiper-button-next:after, .swiper-button-prev:after {
+    font-size: 1.2rem;
+  }
+  @media (min-width: 992px) {
+    .flag-text .excerpt {
+      line-height: 30px;
+      height: 120px;
+      -webkit-line-clamp: 4;
+    }
+  }
+  @media (max-width: 992px) {
+    .flag-text .title {
+      font-size: 2.4rem;
+      margin-top: 20px;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+    }
+    .flag-text .excerpt {
+      line-height: 30px;
+      height: 150px;
+    }
+  }
+  @media (max-width: 551px) {
+    .flag-text .excerpt {
+      line-height: 30px;
+      height: 120px;
+    }
+    .flag-text .title {
+      margin-top: 50px;
+    }
+    .swiper-button-prev {
+      margin-left: 0;
+    }
+    .swiper-button-next {
+      margin-right: 0;
+    }
+  }
 
 
 /* 全屏显示 */
