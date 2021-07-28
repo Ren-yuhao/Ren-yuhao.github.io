@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>article title | Ren yuhao</title>
+  <title>实验报告5 | Ren yuhao</title>
 
   
     
@@ -465,14 +465,14 @@
 
 
 
-<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="/medias/3.jpg" style="background-repeat: no-repeat; background-size: cover; 
+<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="/medias/8.jpg" style="background-repeat: no-repeat; background-size: cover; 
   background-position: center center;position: relative;">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="title-box">
     <span class="title">
-      article title
+      实验报告5
     </span>
   </div>
   
@@ -506,7 +506,8 @@
         
       </div>
       <div class="post-content">
-        <table>
+        <div class="table-container">
+<table>
 <thead>
 <tr>
 <th>姓名：任宇壕</th>
@@ -514,72 +515,80 @@
 <th>学号：191404110221</th>
 </tr>
 </thead>
-<tbody><tr>
-<td></td>
+<tbody>
+<tr>
 <td></td>
 <td></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h1 id="实验五-系统在-MATLAB-中的表示和频率特性"><a href="#实验五-系统在-MATLAB-中的表示和频率特性" class="headerlink" title="[实验五] 系统在$MATLAB$中的表示和频率特性"></a><strong>[实验五] 系统在$MATLAB$中的表示和频率特性</strong></h1><h2 id="实验目的"><a href="#实验目的" class="headerlink" title="[实验目的]"></a><strong>[实验目的]</strong></h2><p>熟悉系统在$MATLAB$中的表示</p>
 <p>掌握系统频率响应曲线绘制的方法</p>
 <p>理解离散时间系统的频率响应</p>
-<h2 id="实验内容"><a href="#实验内容" class="headerlink" title="[实验内容]"></a><strong>[实验内容]</strong></h2><p>一、用$MATLAB$语言描述下列系统，并求出其$tf,zpk$<br>$$<br>（1）\space r^{‘}(t)=10e^{‘}(t)+10e(t)\<br> （2） \space \frac{d^{2}r(t)}{dt^{2}}-5\frac{dr(t)}{dt}=10e(t)<br>$$<br>二、已知系统的系统函数，用$MATLAB$描述下列系统$tf,zpk$<br>$$<br>H(s)=\frac{s}{(s+1)(s+4)}<br>$$<br>三、已知$H(s)$，请分别画出直角坐标系下的频率特性曲线和波特图$(plot、loglog/semilogx、bode)$<br>$$<br>H(s)=\frac{3(s-1)(s-2)}{(s+1)(s+2)}<br>$$</p>
-<h2 id="实验源码-amp-仿真截图"><a href="#实验源码-amp-仿真截图" class="headerlink" title="[实验源码&amp;仿真截图]"></a><strong>[实验源码&amp;仿真截图]</strong></h2><p>一、由（1）（2）方程可得对应系统函数：$H(s)_1=\frac{10s+10}{s} \H(s)_2=\frac{10}{s^{2}-5s}=\frac{10}{s(s-5)}$</p>
-<pre class=" language-matlab"><code class="language-matlab"><span class="token comment" spellcheck="true">%实验5-1-tf</span>
-Ns<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-Ds<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-sys1<span class="token operator">=</span><span class="token function">tf</span><span class="token punctuation">(</span>Ns<span class="token punctuation">,</span>Ds<span class="token punctuation">)</span>
+<h2 id="实验内容"><a href="#实验内容" class="headerlink" title="[实验内容]"></a><strong>[实验内容]</strong></h2><p>一、用$MATLAB$语言描述下列系统，并求出其$tf,zpk$</p>
+<script type="math/tex; mode=display">
+（1）\space r^{'}(t)=10e^{'}(t)+10e(t)\\
+ （2） \space \frac{d^{2}r(t)}{dt^{2}}-5\frac{dr(t)}{dt}=10e(t)</script><p>二、已知系统的系统函数，用$MATLAB$描述下列系统$tf,zpk$</p>
+<script type="math/tex; mode=display">
+H(s)=\frac{s}{(s+1)(s+4)}</script><p>三、已知$H(s)$，请分别画出直角坐标系下的频率特性曲线和波特图$(plot、loglog/semilogx、bode)$</p>
+<script type="math/tex; mode=display">
+H(s)=\frac{3(s-1)(s-2)}{(s+1)(s+2)}</script><h2 id="实验源码-amp-仿真截图"><a href="#实验源码-amp-仿真截图" class="headerlink" title="[实验源码&amp;仿真截图]"></a><strong>[实验源码&amp;仿真截图]</strong></h2><p>一、由（1）（2）方程可得对应系统函数：$H(s)_1=\frac{10s+10}{s} \H(s)_2=\frac{10}{s^{2}-5s}=\frac{10}{s(s-5)}$</p>
+<pre class=" language-lang-matlab"><code class="language-lang-matlab">%实验5-1-tf
+Ns=[10,10];
+Ds=[1,0];
+sys1=tf(Ns,Ds)
 
-<span class="token comment" spellcheck="true">%返回结果</span>
-Transfer <span class="token keyword">function</span><span class="token operator">:</span>
-sys1 <span class="token operator">=</span>
- 
-  <span class="token number">10</span> s <span class="token operator">+</span> <span class="token number">10</span>
-  <span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
+%返回结果
+Transfer function:
+sys1 =
+
+  10 s + 10
+  ---------
       s
 </code></pre>
-<pre class=" language-matlab"><code class="language-matlab"><span class="token comment" spellcheck="true">%实验5-1-1-zpk</span>
-z<span class="token operator">=</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-p<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-k<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">;</span>
-sys1<span class="token operator">=</span><span class="token function">zpk</span><span class="token punctuation">(</span>z<span class="token punctuation">,</span>p<span class="token punctuation">,</span>k<span class="token punctuation">)</span>
+<pre class=" language-lang-matlab"><code class="language-lang-matlab">%实验5-1-1-zpk
+z=[-1];
+p=[0];
+k=10;
+sys1=zpk(z,p,k)
 
-<span class="token comment" spellcheck="true">%返回结果</span>
-Zero<span class="token operator">/</span>pole<span class="token operator">/</span>gain<span class="token operator">:</span>
-sys1 <span class="token operator">=</span>
- 
-  <span class="token number">10</span> <span class="token punctuation">(</span>s<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
-  <span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
+%返回结果
+Zero/pole/gain:
+sys1 =
+
+  10 (s+1)
+  --------
      s
 </code></pre>
-<pre class=" language-matlab"><code class="language-matlab"><span class="token comment" spellcheck="true">%实验5-1-2-tf</span>
-Ns<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-Ds<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-sys2<span class="token operator">=</span><span class="token function">tf</span><span class="token punctuation">(</span>Ns<span class="token punctuation">,</span>Ds<span class="token punctuation">)</span>
+<pre class=" language-lang-matlab"><code class="language-lang-matlab">%实验5-1-2-tf
+Ns=[10];
+Ds=[1,-5,0];
+sys2=tf(Ns,Ds)
 
-<span class="token comment" spellcheck="true">%返回结果</span>
-Transfer <span class="token keyword">function</span><span class="token operator">:</span>
-sys2 <span class="token operator">=</span>
- 
-     <span class="token number">10</span>
-  <span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
-  s<span class="token operator">^</span><span class="token number">2</span> <span class="token operator">-</span> <span class="token number">5</span> s
+%返回结果
+Transfer function:
+sys2 =
+
+     10
+  ---------
+  s^2 - 5 s
 </code></pre>
-<pre class=" language-matlab"><code class="language-matlab"><span class="token comment" spellcheck="true">%实验5-1-2-zpk</span>
-z<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-p<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-sys2<span class="token operator">=</span><span class="token function">zpk</span><span class="token punctuation">(</span>z<span class="token punctuation">,</span>p<span class="token punctuation">,</span>k<span class="token punctuation">)</span>
+<pre class=" language-lang-matlab"><code class="language-lang-matlab">%实验5-1-2-zpk
+z=[];
+p=[0,5];
+sys2=zpk(z,p,k)
 
-<span class="token comment" spellcheck="true">%返回结果</span>
-Zero<span class="token operator">/</span>pole<span class="token operator">/</span>gain<span class="token operator">:</span>
-sys2 <span class="token operator">=</span>
- 
-    <span class="token number">10</span>
-  <span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
-  <span class="token function">s</span> <span class="token punctuation">(</span>s<span class="token number">-5</span><span class="token punctuation">)</span>
+%返回结果
+Zero/pole/gain:
+sys2 =
+
+    10
+  -------
+  s (s-5)
 </code></pre>
 <p>二、由题可得$H(s)=\frac{s}{(s+1)(s+4)}=\frac{s}{s^{2}+5s+4}$</p>
-<pre class=" language-MATLAB"><code class="language-MATLAB">%实验5-2-tf
+<pre class=" language-lang-MATLAB"><code class="language-lang-MATLAB">%实验5-2-tf
 Ns=[1,0];
 Ds=[1,5,4];
 sys=tf(Ns,Ds)
@@ -587,64 +596,64 @@ sys=tf(Ns,Ds)
 %返回结果
 Transfer function:
 sys =
- 
+
         s
   -------------
   s^2 + 5 s + 4
 </code></pre>
-<pre class=" language-matlab"><code class="language-matlab"><span class="token comment" spellcheck="true">%实验5-2-zpk</span>
-z<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-p<span class="token operator">=</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-k<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
-sys<span class="token operator">=</span><span class="token function">zpk</span><span class="token punctuation">(</span>z<span class="token punctuation">,</span>p<span class="token punctuation">,</span>k<span class="token punctuation">)</span>
+<pre class=" language-lang-matlab"><code class="language-lang-matlab">%实验5-2-zpk
+z=[0];
+p=[-1,-4];
+k=1;
+sys=zpk(z,p,k)
 
-<span class="token comment" spellcheck="true">%返回结果</span>
-Zero<span class="token operator">/</span>pole<span class="token operator">/</span>gain<span class="token operator">:</span>
-sys <span class="token operator">=</span>
- 
+%返回结果
+Zero/pole/gain:
+sys =
+
        s
-  <span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
-  <span class="token punctuation">(</span>s<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>s<span class="token operator">+</span><span class="token number">4</span><span class="token punctuation">)</span>
+  -----------
+  (s+1) (s+4)
 </code></pre>
 <p>六、由题可得$H(s)=\frac{3(s-1)(s-2)}{(s+1)(s+2)}=\frac{3s^{2}-9s+6}{s^{2}+3s+2}$</p>
-<pre class=" language-matlab"><code class="language-matlab"><span class="token comment" spellcheck="true">%实验5-6-plot</span>
-clear<span class="token punctuation">;</span>
-<span class="token keyword">for</span> n<span class="token operator">=</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">400</span>
-    <span class="token function">w</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token operator">=</span><span class="token punctuation">(</span>n<span class="token number">-1</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">0.05</span><span class="token punctuation">;</span>
-    <span class="token function">H</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token number">1j</span><span class="token operator">*</span><span class="token function">w</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token number">1j</span><span class="token operator">*</span><span class="token function">w</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1j</span><span class="token operator">*</span><span class="token function">w</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token number">1j</span><span class="token operator">*</span><span class="token function">w</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">end</span>
-mag<span class="token operator">=</span><span class="token function">abs</span><span class="token punctuation">(</span>H<span class="token punctuation">)</span><span class="token punctuation">;</span>
-phase<span class="token operator">=</span><span class="token function">angle</span><span class="token punctuation">(</span>H<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">subplot</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
-<span class="token function">plot</span><span class="token punctuation">(</span>w<span class="token punctuation">,</span>mag<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'幅频特性'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>grid
-<span class="token function">subplot</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
-<span class="token function">plot</span><span class="token punctuation">(</span>w<span class="token punctuation">,</span>phase<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'相频特性'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>grid
+<pre class=" language-lang-matlab"><code class="language-lang-matlab">%实验5-6-plot
+clear;
+for n=1:400
+    w(n)=(n-1)*0.05;
+    H(n)=(3*(1j*w(n)-1)*(1j*w(n)-2))/((1j*w(n)+1)*(1j*w(n)+2));
+end
+mag=abs(H);
+phase=angle(H);
+subplot(2,1,1)
+plot(w,mag);title('幅频特性');grid
+subplot(2,1,2)
+plot(w,phase);title('相频特性');grid
 </code></pre>
-<p>![image-20210508184617247](C:\Users\Ren Yuhao\AppData\Roaming\Typora\typora-user-images\image-20210508184617247.png)</p>
-<pre class=" language-matlab"><code class="language-matlab"><span class="token comment" spellcheck="true">%实验5-6-loglog/semilogx</span>
-clear<span class="token punctuation">;</span>
-<span class="token keyword">for</span> n<span class="token operator">=</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">400</span>
-    <span class="token function">w</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token operator">=</span><span class="token punctuation">(</span>n<span class="token number">-1</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">0.05</span><span class="token punctuation">;</span>
-    <span class="token function">H</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token number">1j</span><span class="token operator">*</span><span class="token function">w</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token number">1j</span><span class="token operator">*</span><span class="token function">w</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1j</span><span class="token operator">*</span><span class="token function">w</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token number">1j</span><span class="token operator">*</span><span class="token function">w</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">end</span>
-mag<span class="token operator">=</span><span class="token function">abs</span><span class="token punctuation">(</span>H<span class="token punctuation">)</span><span class="token punctuation">;</span>
-phase<span class="token operator">=</span><span class="token function">angle</span><span class="token punctuation">(</span>H<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">subplot</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
-<span class="token function">loglog</span><span class="token punctuation">(</span>w<span class="token punctuation">,</span>mag<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'幅频特性'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>grid
-<span class="token function">subplot</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
-<span class="token function">semilogx</span><span class="token punctuation">(</span>w<span class="token punctuation">,</span>phase<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'相频特性'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>grid
+<p><img "" class="lazyload placeholder" data-original="C:\Users\Ren Yuhao\AppData\Roaming\Typora\typora-user-images\image-20210508184617247.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image-20210508184617247"></p>
+<pre class=" language-lang-matlab"><code class="language-lang-matlab">%实验5-6-loglog/semilogx
+clear;
+for n=1:400
+    w(n)=(n-1)*0.05;
+    H(n)=(3*(1j*w(n)-1)*(1j*w(n)-2))/((1j*w(n)+1)*(1j*w(n)+2));
+end
+mag=abs(H);
+phase=angle(H);
+subplot(2,1,1)
+loglog(w,mag);title('幅频特性');grid
+subplot(2,1,2)
+semilogx(w,phase);title('相频特性');grid
 </code></pre>
-<p>![image-20210508184447467](C:\Users\Ren Yuhao\AppData\Roaming\Typora\typora-user-images\image-20210508184447467.png)</p>
-<pre class=" language-matlab"><code class="language-matlab"><span class="token comment" spellcheck="true">%5-6-bodea=[1,3,2];b=[3,-9,6];sys=tf(b,a);bode(sys);grid</span>
+<p><img "" class="lazyload placeholder" data-original="C:\Users\Ren Yuhao\AppData\Roaming\Typora\typora-user-images\image-20210508184447467.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image-20210508184447467"></p>
+<pre class=" language-lang-matlab"><code class="language-lang-matlab">%5-6-bodea=[1,3,2];b=[3,-9,6];sys=tf(b,a);bode(sys);grid
 </code></pre>
-<p>![image-20210508184538773](C:\Users\Ren Yuhao\AppData\Roaming\Typora\typora-user-images\image-20210508184538773.png)</p>
+<p><img "" class="lazyload placeholder" data-original="C:\Users\Ren Yuhao\AppData\Roaming\Typora\typora-user-images\image-20210508184538773.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image-20210508184538773"></p>
 <h2 id="实验心得及总结"><a href="#实验心得及总结" class="headerlink" title="[实验心得及总结]"></a>[实验心得及总结]</h2><p>对系统分析需进行数学模型的建立，描述系统的方法如：微分方程、系统函数、极零点、频率响应函数等。</p>
 <p><strong>系统函数方式格式：</strong></p>
-<pre class=" language-matlab"><code class="language-matlab">sys<span class="token operator">=</span><span class="token function">tf</span><span class="token punctuation">(</span>num<span class="token punctuation">,</span>den<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class=" language-lang-matlab"><code class="language-lang-matlab">sys=tf(num,den);
 </code></pre>
 <p><strong>其中：num-分子多项式；den-分母多项式</strong></p>
 <p><strong>极零点方式格式：</strong></p>
-<pre class=" language-matlab"><code class="language-matlab">sys <span class="token operator">=</span> <span class="token function">zpk</span><span class="token punctuation">(</span>z<span class="token punctuation">,</span>p<span class="token punctuation">,</span>k<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class=" language-lang-matlab"><code class="language-lang-matlab">sys = zpk(z,p,k);
 </code></pre>
 <p><strong>其中：z-零点，p-极点，k-增益</strong></p>
 <p><strong>$loglog$函数：</strong>横纵坐标均取对数</p>
@@ -659,7 +668,7 @@ phase<span class="token operator">=</span><span class="token function">angle</sp
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2021/07/25/undefined/" target="_blank" title="article title">http://ren-yuhao.github.io/2021/07/25/undefined/</a>
+    <a href="/2021/07/25/undefined/" target="_blank" title="实验报告5">http://ren-yuhao.github.io/2021/07/25/undefined/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -1430,5 +1439,20 @@ phase<span class="token operator">=</span><span class="token function">angle</sp
     
     <script src="/js/app.js"></script>
 
-  </body>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>
