@@ -629,7 +629,7 @@ plot(w,mag);title('幅频特性');grid
 subplot(2,1,2)
 plot(w,phase);title('相频特性');grid
 </code></pre>
-<p><img "" class="lazyload" data-original="C:\Users\Ren Yuhao\AppData\Roaming\Typora\typora-user-images\image-20210508184617247.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20210508184617247"></p>
+<p><img "" class="lazyload placeholder" data-original="C:\Users\Ren Yuhao\AppData\Roaming\Typora\typora-user-images\image-20210508184617247.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image-20210508184617247"></p>
 <pre class=" language-lang-matlab"><code class="language-lang-matlab">%实验5-6-loglog/semilogx
 clear;
 for n=1:400
@@ -643,10 +643,10 @@ loglog(w,mag);title('幅频特性');grid
 subplot(2,1,2)
 semilogx(w,phase);title('相频特性');grid
 </code></pre>
-<p><img "" class="lazyload" data-original="C:\Users\Ren Yuhao\AppData\Roaming\Typora\typora-user-images\image-20210508184447467.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20210508184447467"></p>
+<p><img "" class="lazyload placeholder" data-original="C:\Users\Ren Yuhao\AppData\Roaming\Typora\typora-user-images\image-20210508184447467.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image-20210508184447467"></p>
 <pre class=" language-lang-matlab"><code class="language-lang-matlab">%5-6-bodea=[1,3,2];b=[3,-9,6];sys=tf(b,a);bode(sys);grid
 </code></pre>
-<p><img "" class="lazyload" data-original="C:\Users\Ren Yuhao\AppData\Roaming\Typora\typora-user-images\image-20210508184538773.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20210508184538773"></p>
+<p><img "" class="lazyload placeholder" data-original="C:\Users\Ren Yuhao\AppData\Roaming\Typora\typora-user-images\image-20210508184538773.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image-20210508184538773"></p>
 <h2 id="实验心得及总结"><a href="#实验心得及总结" class="headerlink" title="[实验心得及总结]"></a>[实验心得及总结]</h2><p>对系统分析需进行数学模型的建立，描述系统的方法如：微分方程、系统函数、极零点、频率响应函数等。</p>
 <p><strong>系统函数方式格式：</strong></p>
 <pre class=" language-lang-matlab"><code class="language-lang-matlab">sys=tf(num,den);
