@@ -484,7 +484,7 @@
               </div>
               <div class="flag-text">
                 <div class="flag-text-content">
-                  <div class="title ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">Mr.Ren&#39;s Blog</div>
+                  <div class="title ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">电子设计协会#Mr.Ren&#39;s Blog</div>
                   
                     <div class="ani animated default-excerpt" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">
                       <vue-typed-js :strings="defaultDesc" :loop="defaultDescTypedLoop" :typeSpeed="1000">
@@ -1128,7 +1128,7 @@
         :data="listData"
         :class-option="classOption"
         class="warp"
-        style="height: 60px"
+        style="height: 90px"
       >
         <ul class="index-notice-content__ul">
           
@@ -1166,6 +1166,23 @@
                 
               
             </li>
+          
+            <li>
+              
+                <div class="index-notice-content__title">
+                  
+                    <span title="电子设计协会个人官方网站欢迎大家来踩~（后续内容将继续完善）" style="">
+                      电子设计协会个人官方网站欢迎大家来踩~（后续内容将继续完善）
+                    </span>
+                  
+                </div>
+                
+                  <div class="index-notice-content__date" style="">
+                    2021-10-3
+                  </div>
+                
+              
+            </li>
            
         </ul>
       </vue-seamless-scroll>
@@ -1180,7 +1197,7 @@
 <script>
   let seamless = JSON.parse('true');
   seamless = seamless ? 0 : 30;
-  let listData = '[object Object],[object Object]' || [];
+  let listData = '[object Object],[object Object],[object Object]' || [];
   listData = listData.split(',');
   var vm = new Vue({
     el: '#appIndexNotice',
