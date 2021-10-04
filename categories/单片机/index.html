@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>实验报告5 | 电子设计协会</title>
+  <title>分类: 单片机 | 电子设计协会</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -539,577 +539,107 @@
     <div id="safearea">
       <main class="main" id="pjax-container" style="margin-top: 0;">
         
- <!-- prismjs 代码高亮 -->
- 
 
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
+<div class="bg-light-floor-categoryDetail" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
 
-<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
-
-<!-- 文章详情页顶部图片和标题 -->
-
-
-
-
-<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/medias/8.jpg')">
-  <div class="post-detail-header-mask"></div>
-  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
-  
-  <div class="post-detail-header_info-box">
-    <div class="title-box">
-      <span class="title">
-        实验报告5
-      </span>
-    </div>
-    
-    
-      
-        <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2021-07-25 |
-        </span>
-      
-
-      
-
-      
-    
+<div class="category-header"  style="background-image:url('https://pic3.zhimg.com/80/v2-98dcd81cb0d1fee52a807c13cedb8338_1440w.jpg?source=1940ef5c')">
+  <div class="category-header-title">
+    category
   </div>
-  
-  
-    <script src="/js/bubble/bubble.js"></script>
-  
-</div>
-
-
-
-<div class="row justify-position">
-  <div class="main-content">
-    <article class="post post-detail">
-      <div class="post-content">
-        <div class="table-container">
-<table>
-<thead>
-<tr>
-<th>姓名：任宇壕</th>
-<th>班级：电子192</th>
-<th>学号：191404110221</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
-<h1 id="实验五-系统在-MATLAB-中的表示和频率特性"><a href="#实验五-系统在-MATLAB-中的表示和频率特性" class="headerlink" title="[实验五] 系统在$MATLAB$中的表示和频率特性"></a><strong>[实验五] 系统在$MATLAB$中的表示和频率特性</strong></h1><h2 id="实验目的"><a href="#实验目的" class="headerlink" title="[实验目的]"></a><strong>[实验目的]</strong></h2><p>熟悉系统在$MATLAB$中的表示</p>
-<p>掌握系统频率响应曲线绘制的方法</p>
-<p>理解离散时间系统的频率响应</p>
-<h2 id="实验内容"><a href="#实验内容" class="headerlink" title="[实验内容]"></a><strong>[实验内容]</strong></h2><p>一、用$MATLAB$语言描述下列系统，并求出其$tf,zpk$</p>
-<script type="math/tex; mode=display">
-（1）\space r^{'}(t)=10e^{'}(t)+10e(t)\\
- （2） \space \frac{d^{2}r(t)}{dt^{2}}-5\frac{dr(t)}{dt}=10e(t)</script><p>二、已知系统的系统函数，用$MATLAB$描述下列系统$tf,zpk$</p>
-<script type="math/tex; mode=display">
-H(s)=\frac{s}{(s+1)(s+4)}</script><p>三、已知$H(s)$，请分别画出直角坐标系下的频率特性曲线和波特图$(plot、loglog/semilogx、bode)$</p>
-<script type="math/tex; mode=display">
-H(s)=\frac{3(s-1)(s-2)}{(s+1)(s+2)}</script><h2 id="实验源码-amp-仿真截图"><a href="#实验源码-amp-仿真截图" class="headerlink" title="[实验源码&amp;仿真截图]"></a><strong>[实验源码&amp;仿真截图]</strong></h2><p>一、由（1）（2）方程可得对应系统函数：$H(s)_1=\frac{10s+10}{s} \H(s)_2=\frac{10}{s^{2}-5s}=\frac{10}{s(s-5)}$</p>
-<pre class=" language-lang-matlab"><code class="language-lang-matlab">%实验5-1-tf
-Ns=[10,10];
-Ds=[1,0];
-sys1=tf(Ns,Ds)
-
-%返回结果
-Transfer function:
-sys1 =
-
-  10 s + 10
-  ---------
-      s
-</code></pre>
-<pre class=" language-lang-matlab"><code class="language-lang-matlab">%实验5-1-1-zpk
-z=[-1];
-p=[0];
-k=10;
-sys1=zpk(z,p,k)
-
-%返回结果
-Zero/pole/gain:
-sys1 =
-
-  10 (s+1)
-  --------
-     s
-</code></pre>
-<pre class=" language-lang-matlab"><code class="language-lang-matlab">%实验5-1-2-tf
-Ns=[10];
-Ds=[1,-5,0];
-sys2=tf(Ns,Ds)
-
-%返回结果
-Transfer function:
-sys2 =
-
-     10
-  ---------
-  s^2 - 5 s
-</code></pre>
-<pre class=" language-lang-matlab"><code class="language-lang-matlab">%实验5-1-2-zpk
-z=[];
-p=[0,5];
-sys2=zpk(z,p,k)
-
-%返回结果
-Zero/pole/gain:
-sys2 =
-
-    10
-  -------
-  s (s-5)
-</code></pre>
-<p>二、由题可得$H(s)=\frac{s}{(s+1)(s+4)}=\frac{s}{s^{2}+5s+4}$</p>
-<pre class=" language-lang-MATLAB"><code class="language-lang-MATLAB">%实验5-2-tf
-Ns=[1,0];
-Ds=[1,5,4];
-sys=tf(Ns,Ds)
-
-%返回结果
-Transfer function:
-sys =
-
-        s
-  -------------
-  s^2 + 5 s + 4
-</code></pre>
-<pre class=" language-lang-matlab"><code class="language-lang-matlab">%实验5-2-zpk
-z=[0];
-p=[-1,-4];
-k=1;
-sys=zpk(z,p,k)
-
-%返回结果
-Zero/pole/gain:
-sys =
-
-       s
-  -----------
-  (s+1) (s+4)
-</code></pre>
-<p>六、由题可得$H(s)=\frac{3(s-1)(s-2)}{(s+1)(s+2)}=\frac{3s^{2}-9s+6}{s^{2}+3s+2}$</p>
-<pre class=" language-lang-matlab"><code class="language-lang-matlab">%实验5-6-plot
-clear;
-for n=1:400
-    w(n)=(n-1)*0.05;
-    H(n)=(3*(1j*w(n)-1)*(1j*w(n)-2))/((1j*w(n)+1)*(1j*w(n)+2));
-end
-mag=abs(H);
-phase=angle(H);
-subplot(2,1,1)
-plot(w,mag);title('幅频特性');grid
-subplot(2,1,2)
-plot(w,phase);title('相频特性');grid
-</code></pre>
-<p><img src="C:\Users\Ren Yuhao\AppData\Roaming\Typora\typora-user-images\image-20210508184617247.png" class="lazyload placeholder" data-srcset="C:\Users\Ren Yuhao\AppData\Roaming\Typora\typora-user-images\image-20210508184617247.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20210508184617247"></p>
-<pre class=" language-lang-matlab"><code class="language-lang-matlab">%实验5-6-loglog/semilogx
-clear;
-for n=1:400
-    w(n)=(n-1)*0.05;
-    H(n)=(3*(1j*w(n)-1)*(1j*w(n)-2))/((1j*w(n)+1)*(1j*w(n)+2));
-end
-mag=abs(H);
-phase=angle(H);
-subplot(2,1,1)
-loglog(w,mag);title('幅频特性');grid
-subplot(2,1,2)
-semilogx(w,phase);title('相频特性');grid
-</code></pre>
-<p><img src="C:\Users\Ren Yuhao\AppData\Roaming\Typora\typora-user-images\image-20210508184447467.png" class="lazyload placeholder" data-srcset="C:\Users\Ren Yuhao\AppData\Roaming\Typora\typora-user-images\image-20210508184447467.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20210508184447467"></p>
-<pre class=" language-lang-matlab"><code class="language-lang-matlab">%5-6-bodea=[1,3,2];b=[3,-9,6];sys=tf(b,a);bode(sys);grid
-</code></pre>
-<p><img src="C:\Users\Ren Yuhao\AppData\Roaming\Typora\typora-user-images\image-20210508184538773.png" class="lazyload placeholder" data-srcset="C:\Users\Ren Yuhao\AppData\Roaming\Typora\typora-user-images\image-20210508184538773.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20210508184538773"></p>
-<h2 id="实验心得及总结"><a href="#实验心得及总结" class="headerlink" title="[实验心得及总结]"></a>[实验心得及总结]</h2><p>对系统分析需进行数学模型的建立，描述系统的方法如：微分方程、系统函数、极零点、频率响应函数等。</p>
-<p><strong>系统函数方式格式：</strong></p>
-<pre class=" language-lang-matlab"><code class="language-lang-matlab">sys=tf(num,den);
-</code></pre>
-<p><strong>其中：num-分子多项式；den-分母多项式</strong></p>
-<p><strong>极零点方式格式：</strong></p>
-<pre class=" language-lang-matlab"><code class="language-lang-matlab">sys = zpk(z,p,k);
-</code></pre>
-<p><strong>其中：z-零点，p-极点，k-增益</strong></p>
-<p><strong>$loglog$函数：</strong>横纵坐标均取对数</p>
-<p><strong>$semilogx$函数：</strong>仅横坐标取对数</p>
-
-      </div>
-      <div class="post-tags-categories">
-        
-        <div class="tags">
-          
-            <a href="/tags/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/" class="">
-              实验报告
-            </a>
-          
-        </div>
-        
-      </div>
-      
-        <div class="copyright">
-  <ul class="post-copyright">
-    <li class="post-copyright-author">
-    <strong>作者:  </strong>Ren-yuhao</a>
-    </li>
-    <li class="post-copyright-link">
-    <strong>文章链接:  </strong>
-    <a href="/2021/07/25/undefined/" target="_blank" title="实验报告5">http://ren-yuhao.github.io/2021/07/25/undefined/</a>
-    </li>
-    <li class="post-copyright-license">
-      <strong>版权声明:   </strong>
-      本网站所有文章除特别声明外,均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
-      许可协议。转载请注明出处!
-    </li>
-  </ul>
-<div>
-      
-    </article>
-    <!-- 上一篇文章和下一篇文章 -->
+  <div class="category-header-desc">
     
-      <!-- 文章详情页的上一页和下一页 -->
-<div class="post-nav">
-
-
-
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/10.jpg" class="lazyload placeholder" data-srcset="/medias/10.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-    </div>
-    <a href="/2021/07/26/undefined/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">各位客观电协请了解一下</div>
-      </div>
-      
-      <!-- <div class="content">
-        社团组成社长
-创新实验室
-普通协会成员
-社团活动线下授课：讲授51，AD，Solidworks的相关知识，拓展协会成员的
-      </div> -->
-    </a>
-  </div>
-
-
-
-</div>
-
-    
-    
-
-    <!-- 打赏 -->
-    
-      <div id="appDonate" class="post-donate">
-  <div id="donate_board" class="donate_bar center" ref="donate">
-    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
-  </div>
-  <transition name="fade">
-    <div 
-      class="donate-box-mask"
-      v-cloak 
-      v-show="visible"
-      @click="cancelDialogDrawer()"
-    >
-    </div>
-  </transition>
-  <transition name="bounce">
-    <div class="donate-box" v-cloak v-show="visible">
-      <div class="donate-box_close">
-        <i class="fas fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer></i>
-      </div>
-      <div class="donate-box_title">
-        <h4>
-          你的赏识是我前进的动力
-        </h4>
-      </div>
-      <div class="donate-box_tab">
-        <div class="Alipay" pointer :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
-          支付宝
-        </div>
-        <div class="WeChatpay" pointer :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
-          微信
-        </div>
-      </div>
-      <div class="donate-box_img">
-        <div class="AlipayImg" v-show="tabActive === 'Alipay'">
-          <img src="/medias/zfb.jpg" class="lazyload placeholder" data-srcset="/medias/zfb.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="支付宝打赏" />
-        </div> 
-        <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
-          <img src="/medias/wx.jpg" class="lazyload placeholder" data-srcset="/medias/wx.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="微信打赏" />
-        </div>
-      </div>
-    </div>
-  </transition>
-</div>
-
-<script>
-  var body = document.body || document.documentElement || window;
-  var vm = new Vue({
-    el: '#appDonate',
-    data: {
-      visible: false,
-      tabActive: 'Alipay',
-      top: 0,
-    },
-    computed: {
-    },
-    mounted() {
-    },
-    methods: {
-      showDialogDrawer() {
-        this.visible = true;
-        // 防止页面滚动，只能让弹框滚动
-        // function getScroll() {
-        //   return {
-        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
-        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
-        //   };
-        // }
-        this.top = $(document).scrollTop() // or getScroll().top
-        // console.log('aa', $('.main-content'));
-        body.style.cssText = 'overflow: hidden;';
-      },
-      cancelDialogDrawer() {
-        this.visible = false;
-        body.removeAttribute('style');
-        $(document).scrollTop(this.top)
-      },
-      changeTabActive(name) {
-        this.tabActive = name;
-      }
-    },
-    created() {}
-  })
-</script>
-    
-
-    <!-- 分享 -->
-    
-      <!-- https://github.com/overtrue/share.js -->
-<!-- 文章详情页的分享 -->
-<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-
-<script src="/js/shareJs/social-share.min.js"></script>
-</script>
-
-<style>
-  .social-share {
-    margin: 20px 0;
+      <span class="title" id="category-header-desc"></span>
+      <script>
+  function typedFn() {
+    const el = '#category-header-desc';
+    const type = 'categoryDetail';
+    let desc = '明德博学，日新笃行'
+    var typed = new Typed(el, {
+      strings: [desc],
+      startDelay: 100,
+      typeSpeed: 100,
+      loop: true,
+      backSpeed: 50,
+      showCursor: true
+    });
   }
-</style>
-
-
-    
-    
-    <!-- 评论 -->
-    <!-- 评论 -->
-
-  <div id="myComment">
-    
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css">
-<div id="gitalk-container"></div>
-
-<style>
-    .gt-container .gt-meta {
-        z-index: 2;
-    }
-    .gt-container .gt-header-comment {
-        width:100%;
-        box-sizing: border-box;
-        margin-left: 0;
-    }
-</style>
-    
-  </div>
-
-<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
-
-
-  </div>
-
-  <!-- 目录 -->
-  <!-- 文章详情页右侧目录 -->
-
-  <div class="toc-aside">
-    <div class="toc-main">
-      <div class="toc-aside-title">
-        <i class="fas fa-list-ul" aria-hidden="true"></i><span>本文目录</span>
-        
-          <div class="toc-open-close">本文目录</div>
-        
-      </div>
-      <div class="toc-content">
-        <div class="toc"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 手机端目录按钮 -->
-  <div id="toc-mobile-btn">
-    <i class="fas fa-list-ul" aria-hidden="true"></i>
-  </div>
-  <!-- js在scripts目录下的的toc.ejs里面 -->
-  
-
-  <script>
-    function openBtnClickFn () {
-      let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
-      let open = eval('' || 'true');
-      openOrCloseBtn.click(function() {
-        if (open === true) {
-          $(".toc-aside").css({'width': 0, 'padding': 0});
-          $(".toc-content").css({'width': 0});
-          $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
-          $(".main-content").css({'width': '75%', 'margin': '10px auto'});
-          open = false;
-        } else {
-          $(".toc-aside").css({'width': '300px', 'padding': '0 10px'});
-          $(".toc-content").css({'width': '300px'});
-          $(".toc-aside-title span, .toc-aside-title i").css({'display': 'inline-block'});
-          $(".main-content").css({'width': '65%', 'margin-right': '10px', 'margin-left': 'calc(35% - 350px)'});
-          open = true;
-        }
-      });
-    };
-    openBtnClickFn();
-    document.addEventListener('pjax:complete', function () {
-      openBtnClickFn();
-    })
-    
-  </script>
-
-
-  <!-- 图片放大 Wrap images with fancybox support -->
-  <script src="/js/wrapImage.js"></script>
-</div>
-
-<!-- 文章详情页背景图 -->
-<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
-	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
-	<transition-group tag="ul" :name="names">
-		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
-			<img :src="image" class="bg-swiper-img no-lazy">
-		</li>
-	</transition-group>
-</div>
-<script>
-	var vm = new Vue({
-		el: '#appBgSwiper',
-		data: {
-			names: '' || 'fade' || 'fade', // translate-fade fade
-			mark: 0,
-			img: [],
-			bgColor: '',
-			time: null
-		},
-		methods: {   //添加方法
-			change(i, m) {
-				if (i > m) {
-					// this.names = 'fade';
-				} else if (i < m) {
-					// this.names = 'fade';
-				} else {
-					return;
-				}
-				this.mark = i;
-			},
-			prev() {
-				// this.names = 'fade';
-				this.mark--;
-				if (this.mark === -1) {
-					this.mark = 3;
-					return
-				}
-			},
-			next() {
-				// this.names = 'fade';
-				this.mark++;
-				if (this.mark === this.img.length) {
-					this.mark = 0;
-					return
-				}
-			},
-			autoPlay() {
-				// this.names = 'fade';
-				this.mark++;
-				if (this.mark === this.img.length) {
-					this.mark = 0;
-					return
-				}
-			},
-			play() {
-				let bgImgDelay = '' || '180000'
-				let delay = parseInt(bgImgDelay) || 180000;
-				this.time = setInterval(this.autoPlay, delay);
-			},
-			enter() {
-				clearInterval(this.time);
-			},
-			leave() {
-				this.play();
-			}
-		},
-		created() {
-			this.play()
-		},
-		beforeDestroy() {
-			clearInterval(this.time);
-		},
-		mounted() {
-			let prop = '' || '';
-			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
-			if (isImg) {
-				let img = prop.split(',');
-				let configRoot = '/'
-				let arrImg = [];
-				img.forEach(el => {
-					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
-					var objExp = new RegExp(Expression);
-
-					if (objExp.test(el)) {
-						// http or https
-						arrImg.push(el);
-					} else {
-						// 非http or https开头
-						// 本地文件
-						let firstStr = el.charAt(0);
-						if (firstStr == '/') {
-							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
-						}
-						el = configRoot + el;
-						arrImg.push(el);
-					}
-				})
-				this.img = arrImg;
-			} else {
-				this.bgColor = prop;
-			}
-		}
-	})
+  typedFn();
 </script>
+      
+  </div>
+  <div class="mask-box"></div>
+</div>
 
-<style>
-	.bg-swiper-box {
-		position: absolute;
-		display: block;
-		width: 100%;
-		height: 100%;
-	}
 
-	.bg-swiper-img {
-		object-fit: cover;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+<div class="category">
+  <div class="category-name">
+    <div class="name" style="background-color: #85C1E9;">单片机 分类</div>
+  </div>
+  <!-- 每一篇文章卡片 -->
+  <!-- hash算法 -->
+
+<section class="posts">
+  
+    
+    <article class="post reveal" style="flex-direction: row-reverse;   ">
+      <div class="post-main">
+        <div class="post-info">
+          <div class="post-time">
+            <i class="fas fa-clock" aria-hidden="true"></i>
+            <span class="post-time">2021-10-04</span>
+          </div>
+          <div class="post-title">
+            <a class="post-title-link" href="/2021/10/04/undefined/">51入门到如坟</a>
+          </div>
+          <div class="post-meta">
+            <div class="post-tags">
+              <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/" rel="tag">51单片机</a></li></ul>
+
+            </div>
+            <div class="post-categories">
+              <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a>
+</div>
+
+
+            </div>
+          </div>
+          <div class="post-img-mobile">
+            <a href="/2021/10/04/undefined/" style="background-size: cover; 
+              background-position: center center;">
+              <img class="lazyload lazyload placeholder" src="https://i.loli.net/2021/10/04/mg7acCQ8iJPHIWk.jpg" class="lazyload placeholder" data-srcset="https://i.loli.net/2021/10/04/mg7acCQ8iJPHIWk.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+            </a>
+          </div>
+          <div class="post-content">
+            
+          </div>
+        </div>
+        <div class="post-more">
+          <a href="/2021/10/04/undefined/">
+            <i class="iconfont iconmore" pointer style="float: right;  " title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        <a href="/2021/10/04/undefined/" style="background-size: cover; 
+          background-position: center center;">
+          <img class="lazyload lazyload placeholder" src="https://i.loli.net/2021/10/04/mg7acCQ8iJPHIWk.jpg" class="lazyload placeholder" data-srcset="https://i.loli.net/2021/10/04/mg7acCQ8iJPHIWk.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+        </a>
+      </div>
+    </article>
+  
+</section>
+</div>
+<div class="w-70">
+  
+</div>
 
       </main>
     </div>
@@ -1249,7 +779,7 @@ semilogx(w,phase);title('相频特性');grid
   type="playlist"
   id="8062553743"
   fixed='true'
-  autoplay='false'
+  autoplay='true'
   theme='#42b983'
   loop='all'
   order='random'
