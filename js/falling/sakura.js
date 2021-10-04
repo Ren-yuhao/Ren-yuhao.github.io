@@ -137,18 +137,10 @@ function startSakura() {
 window.onresize = function () {
     var canvasSnow = document.getElementById('canvas_snow');
 }
-// 通过home-bg-floor判断是否为首页
 img.onload = function () {
-    ($('#canvas_sakura').length <=0) && ($('#home-bg-floor').length) && startSakura();
+    startSakura();
 }
-document.addEventListener('pjax:send', function (e) {
-    if ($('#canvas_sakura').length) {
-        var child = document.getElementById("canvas_sakura");
-        child.parentNode.removeChild(child);
-        window.cancelAnimationFrame(stop);
-        staticx = false;
-    }
-})
+
 function stopp() {
     if (staticx) {
         var child = document.getElementById("canvas_sakura");
