@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>tags | 河南科技大学电子设计协会</title>
+  <title>标签 | 河南科技大学电子设计协会</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -102,7 +102,7 @@
     <div class="configure-border-2">
       <div class="configure-core"></div>
     </div>
-    <div class="loading-word">loading...</div>
+    <div class="loading-word">加载中...</div>
   </div>
 </div>
 
@@ -474,13 +474,13 @@
         <h2>
           <span>
             <i class="fas fa-search" aria-hidden="true"></i>
-            <span class="title">search</span>
+            <span class="title">本地搜索</span>
           </span>
           <i class="fas fa-times close" pointer style="float:right;" aria-hidden="true" @click.self="cancelDialogVisible()"></i>
         </h2>
         <form class="site-search-form">
           <input type="text"
-            placeholder="keyword"
+            placeholder="请输入关键字"
             id="local-search-input" 
             @click="getSearchFile()"
             class="st-search-input"
@@ -683,7 +683,7 @@
     <div class="card">
         <div class="card-content">
             <div class="tag-title center-align">
-                <i class="fas fa-tags"></i>&nbsp;&nbsp;postTagTitle
+                <i class="fas fa-tags"></i>&nbsp;&nbsp;文章标签
             </div>
             <div class="tag-chips">
                 
@@ -696,9 +696,9 @@
                 </a>
                 
                 
-                <a href="/tags/blog/" title="blog: 1">
+                <a href="/tags/%E7%94%B5%E8%B7%AF/" title="电路: 1">
                     <span class="tag-content"
-                        title="blog" style="background-color: #A3E4D7;">blog
+                        title="电路" style="background-color: #F8F9F9;">电路
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -712,17 +712,9 @@
                 </a>
                 
                 
-                <a href="/tags/C%E8%AF%AD%E8%A8%80/" title="C语言: 2">
+                <a href="/tags/blog/" title="blog: 1">
                     <span class="tag-content"
-                        title="C语言" style="background-color: #85C1E9;">C语言
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E7%94%B5%E8%B7%AF/" title="电路: 1">
-                    <span class="tag-content"
-                        title="电路" style="background-color: #F8F9F9;">电路
+                        title="blog" style="background-color: #A3E4D7;">blog
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -732,6 +724,14 @@
                     <span class="tag-content"
                         title="大学生比赛" style="background-color: #F5EEF8;">大学生比赛
                         <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/C%E8%AF%AD%E8%A8%80/" title="C语言: 2">
+                    <span class="tag-content"
+                        title="C语言" style="background-color: #85C1E9;">C语言
+                        <span class="tag-length">2</span>
                     </span>
                 </a>
                 
@@ -767,11 +767,11 @@
             <!-- 不蒜子统计 -->
             <!-- 不蒜子统计 -->
 <span id="busuanzi_container_site_pv">
-      <i class="fas fa-eye" aria-hidden="true"></i>totalVisits：<span id="busuanzi_value_site_pv"></span> times
+      <i class="fas fa-eye" aria-hidden="true"></i>本站总访问量：<span id="busuanzi_value_site_pv"></span> 次
 </span>
 <span class="post-meta-divider">|</span>
 <span id="busuanzi_container_site_uv" style='display:none'>
-      <i class="fas fa-users" aria-hidden="true"></i>numberVisitors：<span id="busuanzi_value_site_uv"></span> people
+      <i class="fas fa-users" aria-hidden="true"></i>本站访客数：<span id="busuanzi_value_site_uv"></span> 人
 </span>
 
           
@@ -1122,7 +1122,7 @@
       },
       mounted() {
         const that = this;
-        var copy = 'copy';
+        var copy = '复制';
         /* code */
         var initCopyCode = function () {
           var copyHtml = '';
