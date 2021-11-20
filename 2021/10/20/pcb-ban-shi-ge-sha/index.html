@@ -691,11 +691,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 15 |
+            <i class="fas fa-file-text-o"></i> 字数统计: 1.1k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 1分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 3分钟 |
           </span>
   
           
@@ -719,7 +719,30 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h1 id="PCB简介"><a href="#PCB简介" class="headerlink" title="PCB简介"></a>PCB简介</h1><h1 id="PCB绘制软件"><a href="#PCB绘制软件" class="headerlink" title="PCB绘制软件"></a>PCB绘制软件</h1><h1 id="学习视频教程推荐"><a href="#学习视频教程推荐" class="headerlink" title="学习视频教程推荐"></a>学习视频教程推荐</h1>
+        <h1 id="PCB简介"><a href="#PCB简介" class="headerlink" title="PCB简介"></a>PCB简介</h1><p><strong>What＇s a PCB ?</strong> </p>
+<p>PCB（Printed circuit board）是一个最普遍的叫法，也可以叫做“printed wiring boards” 或者 “printed wiring cards”。在PCB出现之前，电路是通过点到点的接线组成的。这种方法的可靠性很低，因为随着电路的老化，线路的破裂会导致线路节点的断路或者短路。</p>
+<p>绕线技术是电路技术的一个重大进步，这种方法通过将小口径线材绕在连接点的柱子上，提升了线路的耐久性以及可更换性。</p>
+<p>当电子行业从真空管、继电器发展到硅半导体以及集成电路的时候，电子元器件的尺寸减小，价格也在下降。电子产品越来越频繁的出现在了消费领域，促使厂商去寻找更小以及性价比更高的方案。于是，PCB诞生了。</p>
+<p><strong>Composition （组成）</strong></p>
+<p>PCB看上去像多层蛋糕或者千层面—制作中将不同的材料的层，通过热量和粘合剂压制到一起。</p>
+<p>从中间层开始吧。</p>
+<p><strong>FR4</strong></p>
+<p>PCB的基材一般都是玻璃纤维。大多数情况下，PCB的玻璃纤维基材一般就指“FR4”这种材料。“FR4”这种固体材料给予了PCB硬度和厚度。除了FR4这种基材外，还有柔性高温塑料（聚酰亚胺或类似）上生产的柔性电路板等等。</p>
+<p>你可能会发现有不同厚度的PCB；然而 SparkFun的产品的厚度大部分都是1.6mm（0.063’‘）。有一些产品也采用了其它厚度，比如 LilyPad、Arudino Pro Micro boards采用了0.8mm的板厚。</p>
+<p>廉价的PCB和洞洞板（见上图）是由环氧树脂或酚这样的材料制成，缺乏 FR4那种耐用性，但是却便宜很多。当在这种板子上焊接东西时，将会闻到很大的异味。这种类型的基材，常常被用在很低端的消费品里面。酚类物质具有较低的热分解温度，焊接时间过长会导致其分解碳化，并且散发出难闻的味道。</p>
+<p><strong>Copper</strong></p>
+<p>接下来介绍是很薄的铜箔层，生产中通过热量以及黏合剂将其压制倒基材上面。在双面板上，铜箔会压制到基材的正反两面。在一些低成本的场合，可能只会在基材的一面压制铜箔。当我们提及到”双面板“或者”两层板“的时候，指的是我们的千层面上有两层铜箔。当然，不同的PCB设计中，铜箔层的数量可能是1层这么少，或者比16层还多。</p>
+<p>铜层的厚度种类比较多，而且是用重量做单位的，一般采用铜均匀的覆盖一平方英尺的重量（盎司oz）来表示。大部分PCB的铜厚是1oz，但是有一些大功率的PCB可能会用到2oz或者3oz的铜厚。将盎司（oz）每平方英尺换算一下，大概是 35um或者1.4mil的铜厚。</p>
+<p><strong>Soldermask （阻焊）</strong></p>
+<p>在铜层上面的是阻焊层。这一层让PCB看起来是绿色的（或者是SparkFun的红色）。阻焊层覆盖住铜层上面的走线，防止PCB上的走线和其他的金属、焊锡或者其它的导电物体接触导致短路。阻焊层的存在，使大家可以在正确的地方进行焊接 ，并且防止了焊锡搭桥。</p>
+<p>阻焊覆盖了PCB的大部分（包括走线），但是露出了银色的孔环以及SMD焊盘，以方便焊接。</p>
+<p>一般来说，阻焊都是绿色的，但几乎所有的颜色可以用来做阻焊。SparkFun的板卡大部分是红色的，但是IOIO板卡用了白色，LilyPad板卡是紫色的。</p>
+<p><strong>Silkscreen （丝印）</strong></p>
+<p>在阻焊层上面，是白色的丝印层。在PCB的丝印层上印有字母、数字以及符号，这样可以方便组装以及指导大家更好地理解板卡的设计。我们经常会用丝印层的符号标示某些管脚或者LED的功能等。</p>
+<p>丝印层最常见的颜色是白色，同样，丝印层几乎可以做成任何颜色。黑色，灰色，红色甚至是黄色的丝印层并不少见。然而，很少见到单个板卡上有多种丝印层颜色.</p>
+<h1 id="PCB绘制软件"><a href="#PCB绘制软件" class="headerlink" title="PCB绘制软件"></a>PCB绘制软件</h1><p>推荐使用Altium Designer。</p>
+<h1 id="学习视频教程推荐"><a href="#学习视频教程推荐" class="headerlink" title="学习视频教程推荐"></a>学习视频教程推荐</h1><p>B站凡亿教育</p>
+
       </div>
       <div class="post-tags-categories">
         
@@ -1687,20 +1710,5 @@
 
 
 
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</body>
+  </body>
 </html>
