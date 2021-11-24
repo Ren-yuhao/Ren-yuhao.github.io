@@ -8,7 +8,7 @@
       <link href="/2021/11/23/da-xue-bu-gua-ke-zhi-nan/"/>
       <url>/2021/11/23/da-xue-bu-gua-ke-zhi-nan/</url>
       
-        <content type="html"><![CDATA[<p>Declaration：本指南仅针对电子系的同学，电气的同学可供参考,使用教材《自动控制原理简明教程》（胡寿松）</p><p><strong>Chapter 1</strong></p><p>1.1 傅里叶变换：$F(\omega)=\int_{-\infty}^{\infty}f(t)e^{-j\omega t}dt$<br>1.2 </p>]]></content>
+        <content type="html"><![CDATA[<p>Declaration：本指南仅针对电子系的同学，电气的同学可供参考<br>            cankao jiao<br><strong>Chapter 1</strong></p><p>1.1 傅里叶变换：$F(\omega)=\int_{-\infty}^{\infty}f(t)e^{-j\omega t}dt$<br>1.2 </p>]]></content>
       
       
       
